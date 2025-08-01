@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Girlfriend Day</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ffe6f0, #fff0f5);
+      color: #5a2a60;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+      color: #d63384;
+    }
+
+    .heart {
+      font-size: 4rem;
+      color: #ff69b4;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    .main-photo {
+      width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      margin: 1.5rem 0;
+    }
+
+    .message {
+      max-width: 650px;
+      font-size: 1.1rem;
+      background-color: #ffffffcc;
+      padding: 1.5rem;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      object-fit: cover;
+      height: 180px;
+      transition: transform 0.2s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .footer {
+      margin-top: 3rem;
+      font-size: 1rem;
+      color: #777;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #fff;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Music -->
+  <audio autoplay loop id="bgm">
+    <source src="thank_god_i_found_you.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung pemutar audio.
+  </audio>
+
+  <div class="heart">💖</div>
+  <h1>Happy Girlfriend Day!</h1>
+  <img src="main_photo.jpg" alt="Foto utama" class="main-photo" />
+
+  <div class="message">
+    Hari ini adalah hari istimewa untukmu, sayang. Terima kasih sudah menjadi seseorang yang luar biasa dalam hidupku.
+    Kamu tidak hanya pacar terbaik, tapi juga sahabat paling manis yang pernah aku punya. 💖<br><br>
+    Semoga hari ini kamu merasa dicintai, dihargai, dan selalu bahagia.
+    Aku akan selalu ada untukmu. Selamat Hari Pacar Perempuan! 🌸
+  </div>
+
+  <div class="gallery">
+    <img src="photo1.jpg" alt="Foto 1" onclick="openModal(this.src)">
+    <img src="photo2.jpg" alt="Foto 2" onclick="openModal(this.src)">
+    <img src="photo3.jpg" alt="Foto 3" onclick="openModal(this.src)">
+    <img src="photo4.jpg" alt="Foto 4" onclick="openModal(this.src)">
+    <img src="photo5.jpg" alt="Foto 5" onclick="openModal(this.src)">
+    <img src="photo6.jpg" alt="Foto 6" onclick="openModal(this.src)">
+    <img src="photo7.jpg" alt="Foto 7" onclick="openModal(this.src)">
+    <img src="photo8.jpg" alt="Foto 8" onclick="openModal(this.src)">
+    <img src="photo9.jpg" alt="Foto 9" onclick="openModal(this.src)">
+  </div>
+
+  <div class="footer">Dari yang selalu mencintaimu 💌</div>
+
+  <!-- Modal Viewer -->
+  <div id="myModal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImg" />
+  </div>
+
+  <script>
+    function openModal(src) {
+      const modal = document.getElementById("myModal");
+      const modalImg = document.getElementById("modalImg");
+      modal.style.display = "flex";
+      modalImg.src = src;
+    }
+
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+  </script>
+</body>
+</html>
